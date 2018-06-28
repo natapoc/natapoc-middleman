@@ -1,0 +1,32 @@
+h1, .nl-heading {
+	text-transform: uppercase;
+}
+.nl-heading {
+	position: relative;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+}
+.nl-heading:after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: '';
+	width: 70px;
+	height: 2px;
+	margin-left: -35px;
+	background-color: #c8550b;
+}
+h1 {
+	text-align: center;
+}
+h4.nl-heading:after {
+	left: 0;
+	margin-left: 0;
+}
+a {
+	color: #e8e8e8;
+}
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}

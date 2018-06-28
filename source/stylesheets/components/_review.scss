@@ -1,0 +1,42 @@
+.review {
+  margin: 0 0 20px;
+
+  &__photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__comments__container {
+    margin: 0 0 1em;
+    padding: 15px;
+    background: rgba(0,0,0,0.35);
+  }
+
+  &__comments {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: left;
+    color: #e6e6e6;
+    width: 100%;
+  }
+
+  &__stay {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  &__read-more {
+    color: #AAA;
+  }
+
+  &__modal {
+    text-align: left;
+    color: #161616;
+
+    &__content {
+      padding: 15px 15px 30px;
+    }
+  }
+}

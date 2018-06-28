@@ -1,0 +1,12 @@
+.nl-panel {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+}
+.nl-panel__calendar {
+  min-height: 392px;
+  background-color: rgba(0,0,0,0.6);
+}
+.nl-panel__calendar .nl-panel__calendar__title {
+  color: rgba(255,255,255,0.8);
+}

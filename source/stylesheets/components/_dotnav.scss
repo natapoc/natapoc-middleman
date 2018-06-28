@@ -1,0 +1,13 @@
+.uk-dotnav>*>* {
+  background: rgba(255,255,255,.1);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.uk-dotnav>.uk-active>* {
+  background: rgba(255,255,255,.4);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.uk-dotnav>*>:focus, .uk-dotnav>*>:hover {
+  background: rgba(255,255,255,.4);
+}

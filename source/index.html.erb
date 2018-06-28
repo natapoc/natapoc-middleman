@@ -1,0 +1,334 @@
+---
+title: Welcome to Middleman
+---
+
+<div class="uk-position-top" id="home">
+	<div class="nl-menu-bar js-nl-menu-bar">
+		<div data-uk-scrollspy="{cls:'uk-animation-fade',delay:300}">
+			<div class="nl-menu-bar__welcome">
+				<div class="uk-container uk-container-center">
+					<div class="uk-grid uk-grid-collapse">
+						<div class="uk-width-7-10 uk-width-medium-5-10">
+							<div class="nl-menu-bar__logo"></div>
+						</div>
+						<div class="uk-width-3-10 uk-width-medium-5-10 uk-text-right uk-flex uk-flex-middle uk-flex-right">
+							<a href="mailto:<%= dato.property_info.email %>" class="uk-text-nowrap uk-margin-right"><i class="uk-icon-envelope uk-text-large uk-text-middle"></i>
+								<span class="uk-hidden-small"><%= dato.property_info.email %></span></a>
+							<a href="tel://1-425-224-2466" class="uk-text-nowrap uk-margin-right"><i class="uk-icon-phone uk-text-large uk-text-middle"></i>
+								<span class="uk-hidden-small"><%= dato.property_info.phone %></span></a>
+							<a href="https://instagram.com/natapoclodge" target="_blank"><i class="uk-icon-instagram uk-text-large uk-text-middle"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="nl-menu-bar__navigation">
+				<div class="uk-container uk-container-center">
+					<div class="nl-menu-bar__navigation">
+						<div class="uk-grid">
+							<div class="uk-width-1-1 uk-width-medium-1-1 uk-text-center-small">
+								<nav class="nl-menu-bar__nav">
+									<ul class="uk-subnav uk-subnav-line uk-display-inline-block" data-uk-scrollspy-nav="{closest:'li', smoothscroll:true}">
+										<li><a href="#home"><i class="uk-icon-home"></i> <span class="uk-hidden-small">Home</span></a></li>
+										<li><a href="#the-lodge"><i class="uk-icon-photo"></i> <span class="uk-hidden-small">Photos</span></a></li>
+										<li><a href="#their-adventure"><i class="uk-icon-group"></i> <span class="uk-hidden-small">People</span></a></li>
+										<li><a href="#reviews"><i class="uk-icon-comments"></i> <span class="uk-hidden-small">Reviews</span></a></li>
+										<li><a href="#your-adventure"><i class="uk-icon-calendar"></i> <span class="uk-hidden-small">Inquiries</span></a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uk-cover-background uk-height-viewport uk-position-relative" style="min-height: 675px; background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(http://www.natapoclodge.com/wp/wp-content/uploads/2016/05/lodge-outdoor.jpg);">
+	<div class="nl-panel">
+		<div class="uk-container uk-container-center">
+			<h1 class="uk-width-1-1 uk-text-left uk-contrast" data-uk-scrollspy="{cls:'uk-animation-fade',delay:300}">Adventure <span data-uk-scrollspy="{cls:'uk-animation-fade',delay:700}">in&nbsp;</span><span data-uk-scrollspy="{cls:'uk-animation-fade',delay:1100}">Luxury</span></h1>
+			<div class="uk-panel uk-panel-box uk-width-1-1 uk-width-medium-1-2 uk-width-large-2-5 nl-panel__calendar" data-uk-scrollspy="{cls:'uk-animation-fade',delay:1500}">
+				<a class="uk-button uk-button-large uk-button-success uk-width-1-1 uk-margin-bottom" href="#your-adventure">BOOK TODAY <i class="uk-margin-left uk-icon-check-square-o uk-icon-small uk-text-middle"></i></a>
+
+				<h3 class="uk-panel-title nl-panel__calendar__title"><i class="uk-icon-calendar uk-margin-small-right"></i> Check Availability</h3>
+				<!-- OwnerRez Single Month Calendar widget for Natapoc Lodge -->
+				<div class="ownerrez-widget" data-widgetId="2d2d08dab92d4e3ba62fcdcb270d1363" data-propertyId="c0013024c66049e183caccf5152933ad"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uk-block uk-block-secondary uk-block-large uk-contrast" id="the-lodge">
+	<div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-3-5 uk-text-center uk-margin-bottom">
+		<h2 class="uk-h1 nl-heading">The Lodge</h2>
+
+		<p class="uk-text-large uk-padding-top-remove uk-margin-large-bottom">Natapoc Lodge is the
+			luxurious rustic vacation destination located near
+			<a href="http://www.leavenworth.org/" target="_blank">Leavenworth Village</a> and
+			<a href="http://www.lakewenatcheeinfo.com/" target="_blank">Lake Wenatchee</a>, in the heart
+			of Washington’s Cascade Mountain Range. The lodge has
+				over 3,800 Square feet of living space which is well suited for groups of up to 17 guests to
+				spend quality time in a beautiful natural environment.</p>
+
+	</div>
+
+	<div data-uk-slideset="{animation: 'scale', controls: '#image-gallery', small: 1, medium: 2, large: 2}">
+		<div class="uk-slidenav-position uk-margin">
+			<div class="uk-container uk-container-center uk-width-1-1 uk-text-center">
+				<ul class="uk-grid uk-slideset">
+          <% dato.galleries.each do |gallery| %>
+						<li>
+							<div class="uk-panel uk-panel-box uk-height-1-1" style="background: transparent;">
+								<div class="uk-grid uk-grid-small">
+									<div class="uk-width-1-3">
+										<div class="uk-border-circle uk-overlay uk-overlay-hover uk-margin-bottom">
+											<img src="<%= gallery.featured_image.url({ w: 300, h: 300, fit: :crop, crop: :focalpoint, auto: :compress }) %>" class="uk-width-1-1 uk-overlay-scale">
+											<div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
+											</div>
+											<a data-uk-lightbox="{group:'gallery'}" href="<%= gallery.featured_image.url %>" class="uk-position-cover">
+											</a>
+										</div>
+									</div>
+									<div class="uk-width-2-3">
+  									<div class="uk-grid uk-grid-small">
+                      <% gallery.images.each do |image| %>
+                        <div class="uk-width-1-3" style="padding-bottom: 10px">
+                          <div class="uk-border-circle uk-overlay uk-overlay-hover">
+                            <img src="<%= image.url({ w: 300, h: 300, fit: :crop, crop: :focalpoint, auto: :compress }) %>" class="uk-width-1-1 uk-overlay-scale">
+                            <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                            </div>
+                            <a data-uk-lightbox="{group:'gallery'}" href="<%= image.url %>" class="uk-position-cover">
+                            </a>
+                          </div>
+                        </div>
+                      <% end %>
+  									</div>
+								  </div>
+							  </div>
+              </div>
+						</li>
+          <% end %>
+				</ul>
+			</div>
+			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideset-item="next"></a>
+		</div>
+		<ul class="uk-slideset-nav uk-dotnav uk-flex-center uk-margin-top">
+		</ul>
+	</div>
+</div>
+
+
+<div class="uk-block uk-block-muted uk-block-large" id="their-adventure">
+	<div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-3-5 uk-text-center uk-margin-bottom">
+		<h2 class="uk-h1 nl-heading">Adventures</h2>
+		<p class="uk-block uk-text-large uk-padding-top-remove">Spring through fall, Natapoc Lodge
+			offers a wide range of activities. Over 150 miles of trails for hiking, mountain biking
+			and horseback riding lace our countryside. Fly fishing, river rafting and canoeing are just
+			steps from the front door, with tennis and golf&nbsp;nearby.</p>
+	</div>
+
+	<div data-uk-slideset="{small: 1, medium: 2, large: 3}">
+		<div class="uk-slidenav-position uk-margin">
+      <div class="uk-container uk-container-center uk-width-4-5 uk-text-center">
+				<ul class="uk-grid uk-slideset">
+          <% dato.instagram_posts.each do |instagram_post| %>
+						<li class="uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-3">
+							<%= instagram_post.share_code %>
+						</li>
+					<% end %>
+				</ul>
+      </div>
+      <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+      <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideset-item="next"></a>
+    </div>
+  </div>
+</div>
+
+<div class="uk-block uk-block-secondary uk-block-large uk-contrast" id="faq">
+	<div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-3-5 uk-text-center uk-margin-bottom">
+		<h2 class="uk-h1 nl-heading">Frequently Asked Questions</h2>
+
+		<p class="uk-text-large uk-padding-top-remove uk-margin-large-bottom">Located on the banks of
+			historic Nason Creek and gifted with over 300 days of Sunshine, the Lodge is a quick 90
+			minute drive from Seattle, 15 minutes outside the Bavarian Village of Leavenworth and 20
+			minutes from Stevens Pass Ski&nbsp;Resort.</p>
+	</div>
+
+	<div class="uk-container uk-container-center uk-width-9-10">
+
+		<div class="uk-accordion" data-uk-accordion>
+
+			<% dato.faqs.each do |faq| %>
+				<h3 class="uk-accordion-title nl-accordion-title"><%= faq.question %></h3>
+				<div class="uk-accordion-content nl-accordion-content">
+					<%= faq.answer %>
+				</div>
+			<% end %>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="reviews" class="uk-block uk-block-large uk-contrast" style="background-size: cover; background-image: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url('http://www.natapoclodge.com/wp/wp-content/uploads/2016/01/SCH_7836-1024x744.jpg'); background-position: 50% 50%;">
+  <div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-3-5 uk-text-center uk-margin-bottom">
+		<h2 class="uk-h1 nl-heading">Guest Reviews</h2>
+		<p class="uk-block uk-text-large uk-padding-top-remove">Natapoc Lodge was built in 2008 and all
+			of our facilities are modern and extremely eco-friendly. Our guests continually claim that we
+			offer the &ldquo;best&rdquo; in the Lake Wenatchee&nbsp;Valley.</p>
+	</div>
+
+  <div data-uk-slideset="{small: 1, medium: 2, large: 3}">
+		<div class="uk-slidenav-position uk-margin">
+      <div class="uk-container uk-container-center uk-width-4-5 uk-text-center">
+        <ul class="uk-grid uk-slideset">
+          <% dato.reviews.each.with_index(1) do |review, index| %>
+            <!-- {% if review.author.thumbnail_url %}
+              {% assign review_thumbnail_url = review.author.thumbnail_url %}
+            {% else %}
+              {% assign review_thumbnail_url = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y" %}
+            {% endif %} -->
+            <li class="review uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-3">
+              <div class="review__comments__container">
+                <div class="review__comments js-review-comments">
+                  <%= review.message %>
+                </div>
+              </div>
+              <img src="<%= review.photo.url %>" class="review__photo uk-border-circle uk-margin-small-right" alt="">
+              <span class="review__stay">
+                <%= review.guest_name %><br>
+                <span class="uk-text-small">Stayed <%= review.date.strftime("%b %e, %Y") %></span>
+              </span>
+
+              <div id="review-<%= index %>" class="uk-modal review__modal">
+                <div class="uk-modal-dialog uk-modal-dialog-lightbox">
+                  <a class="uk-modal-close uk-close uk-close-alt"></a>
+                  <div class="review__modal__content uk-flex">
+                    <img src="<%= review.photo.url %>" class="review__photo uk-border-circle uk-flex-item-none uk-margin-right" alt="">
+										<div class="uk-flex-item-1">
+	                    <%= review.guest_name %><br>
+	                    <p class="uk-margin-top-remove uk-margin-small-bottom uk-text-small">Stayed <%= review.date.strftime("%b %e, %Y") %></p>
+	                    <div class="uk-nbfc">
+	                      <%= review.message %>
+	                    </div>
+										</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+      <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideset-item="next"></a>
+    </div>
+  </div>
+
+	<div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-3-5 uk-grid uk-grid-collapse uk-margin-large-top">
+		<div class="uk-width-1-3 uk-text-left">
+			<!-- TripAdvisor Buttons -->
+			<div id="TA_socialButtonBubbles153" class="TA_socialButtonBubbles">
+		    <ul id="MjrnCqJ" class="TA_links 4z7vkPK uk-list">
+		    	<li id="gNwRoEO" class="gmvDflQPV4z">
+		    		<a target="_blank" href="http://www.tripadvisor.com/Hotel_Review-g58560-d2015550-Reviews-Natapoc_Lodge-Leavenworth_Washington.html"><img src="http://www.tripadvisor.com/img/cdsi/img2/branding/socialWidget/20x28_green-21693-2.png"/></a>
+		    	</li>
+		    </ul>
+	    </div>
+	    <script src="//www.jscache.com/wejs?wtype=socialButtonBubbles&amp;uniq=153&amp;locationId=2015550&amp;color=green&amp;size=rect&amp;lang=en_US&amp;display_version=2"></script>
+			<!-- TripAdvisor Buttons -->
+		</div>
+		<div class="uk-width-1-3 uk-text-center">
+			<div style="display:inline-block;"><a href="http://www.vrbo.com/411334" rel="nofollow"><img src="http://www.vrbo.com/haow/api/image/vrbo/vrbo/411334/reviews" alt="HomeAway Property" style="border:none;" rel="nofollow"/></a><div style="text-align:center;"><a href="http://www.vrbo.com/411334/reviews" rel="nofollow">Read</a> or <a href="http://www.vrbo.com/411334/reviews/write" rel="nofollow">Write</a> Reviews</div></div>
+		</div>
+		<div class="uk-width-1-3 uk-text-right">
+			<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	  	<div class="addthis_sharing_toolbox"></div>
+			<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		</div>
+	</div>
+</div>
+
+
+<div class="uk-block uk-block-muted uk-block-large" id="your-adventure">
+	<div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-3-5 uk-text-center uk-margin-bottom">
+		<h2 class="uk-h1 nl-heading">Your Adventure</h2>
+		<p class="uk-block uk-text-large uk-padding-top-remove">We can host up to 17 people as a group
+			or secluded, romantic getaways for two. Whether you are planning a weekend getaway or a
+			weeklong vacation, your time spent at this special place will be memorable. Get in touch and
+			let us help you plan your next Leavenworth area&nbsp;vacation.</p>
+	</div>
+
+	<div class="uk-container uk-container-center uk-width-1-1 uk-text-center">
+
+		<!-- OwnerRez Three Month Calendar widget for Natapoc Lodge -->
+		<div class="ownerrez-widget" data-widgetId="8b044aea6083491f95b746a0ad1227c7" data-propertyId="c0013024c66049e183caccf5152933ad"></div>
+
+	</div>
+	<div class="uk-container uk-container-center uk-width-1-1 uk-width-medium-7-10 uk-text-center">
+
+		<!-- OwnerRez Booking/Inquiry widget for Natapoc Lodge -->
+		<div class="ownerrez-widget" data-widgetId="2d144d1be26a46f086014087cce5194c" data-propertyId="c0013024c66049e183caccf5152933ad"></div>
+	</div>
+</div>
+
+
+<div class="uk-block uk-block-secondary uk-block-large uk-contrast uk-padding-bottom-remove">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-1-1 uk-width-medium-1-2 uk-margin-large-bottom">
+				<h4 class="nl-heading">About Us</h4>
+				<p>We're passionate about providing a vacation
+					experience that is unparalleled in the Leavenworth and Lake Wenatchee&nbsp;area.</p>
+				<p><a href="mailto:reviews@natapoclodge.com">Say hi</a> and let us know how we're&nbsp;doing.</p>
+				<div>
+					<% dato.team_members.each do |team_member| %>
+						<% if team_member.website %>
+							<a href="<%= team_member.website %>" target="_blank" style="text-decoration: none;"
+								class="uk-margin-small-right uk-margin-small-bottom uk-display-inline-block">
+						<% else %>
+							<span class="uk-margin-small-right uk-margin-small-bottom uk-display-inline-block">
+						<% end %>
+							<img src="<%= team_member.photo.url({ w: 100, h: 100, fit: :crop, crop: :focalpoint, auto: :compress }) %>"
+							width="50" height="50" class="uk-border-circle" alt="<%= team_member.name %>">
+						<% if team_member.website %></a><% else %></span><% end %>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="uk-width-1-1 uk-width-medium-1-2 uk-grid">
+				<div class="uk-width-1-1 uk-width-large-1-2 uk-margin-large-bottom">
+					<h4 class="nl-heading">Connect With Us</h4>
+					<p><a href="mailto:<%= dato.property_info.email %>" class="uk-text-nowrap uk-margin-right">
+						<i class="uk-icon-envelope uk-text-large uk-text-middle uk-margin-small-right"></i>
+						<span><%= dato.property_info.email %></span></a><br>
+					<a href="tel://1-425-224-2466" class="uk-text-nowrap uk-margin-right">
+						<i class="uk-icon-phone uk-text-large uk-text-middle uk-margin-small-right"></i>
+						<span><%= dato.property_info.phone %></span></a></p>
+
+					<p>
+						<a href="http://instagram.com/natapoclodge" target="_blank" class="uk-margin-small-right"><i class="uk-icon-instagram uk-icon-large uk-text-middle"></i></a>
+						<a href="http://facebook.com/natapoc" target="_blank" class="uk-margin-small-right"><i class="uk-icon-facebook-square uk-icon-large uk-text-middle"></i></a>
+						<a href="https://www.youtube.com/channel/UCh8Tm2PYc8e9e4xPg-CXcpQ" target="_blank" class="uk-margin-small-right"><i class="uk-icon-youtube-square uk-icon-large uk-text-middle"></i></a>
+						<a href="https://www.tripadvisor.com/Hotel_Review-g58560-d2015550-Reviews-Natapoc_Lodge-Leavenworth_Washington.html" target="_blank" class="uk-margin-small-right"><i class="uk-icon-tripadvisor uk-icon-large uk-text-middle"></i></a>
+					</p>
+				</div>
+				<div class="uk-width-1-1 uk-width-large-1-2 uk-margin-large-bottom">
+					<h4 class="nl-heading">Payments Accepted</h4>
+					<p>
+						<i class="uk-icon-cc-visa uk-icon-large uk-text-middle uk-margin-small-right"></i>
+						<i class="uk-icon-cc-mastercard uk-icon-large uk-text-middle uk-margin-small-right"></i>
+					</p>
+				</div>
+			</div>
+		</div>
+		<img src="<%= dato.property_info.footer_logo.url %>" width="100">
+	</div>
+</div>
+
+<div class="uk-block nl-block-tertiary uk-contrast">
+	<div class="uk-container uk-container-center uk-text-center">
+		&copy; <%= Time.current.strftime('%Y') %> Natapoc Lodge. All rights reserved.
+	</div>
+</div>

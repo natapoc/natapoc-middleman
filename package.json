@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "clamp-js": "^0.7.0",
+    "jquery": "2",
+    "uikit": "2",
+    "webpack": "^4.12.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.8"
+  }
+}
