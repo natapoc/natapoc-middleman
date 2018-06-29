@@ -91,11 +91,13 @@ end
 #   end
 # end
 
-dato.tap do |dato|
-  dato.redirects.each do |redirect|
-    redirect "#{ redirect.origin }index.html", to: "#{ redirect.destination }"
-  end
-end
+# dato.tap do |dato|
+#   dato.redirects.each do |redirect|
+#     redirect "#{ redirect.origin }index.html", to: "#{ redirect.destination }"
+#   end
+# end
+
+proxy "_redirects", "netlify-redirects", ignore: true
 
 # proxy(
 #   '/this-page-has-no-template.html',
