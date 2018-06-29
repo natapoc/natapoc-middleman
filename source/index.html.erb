@@ -192,20 +192,20 @@
                   <%= review.message %>
                 </div>
               </div>
-              <img src="<%= review.photo.url %>" class="review__photo uk-border-circle uk-margin-small-right" alt="">
+              <img src="<%= review.photo.url({ w: 50, h: 50, fit: :crop, crop: :focalpoint }) %>" class="review__photo uk-border-circle uk-margin-small-right" alt="">
               <span class="review__stay">
                 <%= review.guest_name %><br>
-                <span class="uk-text-small">Stayed <%= review.date.strftime("%b %e, %Y") %></span>
+                <span class="uk-text-small">Stayed <%= DateTime.parse(review.timestamp).strftime("%b %e, %Y") %></span>
               </span>
 
               <div id="review-<%= index %>" class="uk-modal review__modal">
                 <div class="uk-modal-dialog uk-modal-dialog-lightbox">
                   <a class="uk-modal-close uk-close uk-close-alt"></a>
                   <div class="review__modal__content uk-flex">
-                    <img src="<%= review.photo.url %>" class="review__photo uk-border-circle uk-flex-item-none uk-margin-right" alt="">
+                    <img src="<%= review.photo.url({ w: 50, h: 50, fit: :crop, crop: :focalpoint }) %>" class="review__photo uk-border-circle uk-flex-item-none uk-margin-right" alt="">
 										<div class="uk-flex-item-1">
 	                    <%= review.guest_name %><br>
-	                    <p class="uk-margin-top-remove uk-margin-small-bottom uk-text-small">Stayed <%= review.date.strftime("%b %e, %Y") %></p>
+	                    <p class="uk-margin-top-remove uk-margin-small-bottom uk-text-small">Stayed <%= DateTime.parse(review.timestamp).strftime("%b %e, %Y") %></p>
 	                    <div class="uk-nbfc">
 	                      <%= review.message %>
 	                    </div>
@@ -286,8 +286,7 @@
 						<% else %>
 							<span class="uk-margin-small-right uk-margin-small-bottom uk-display-inline-block">
 						<% end %>
-							<img src="<%= team_member.photo.url({ w: 100, h: 100, fit: :crop, crop: :focalpoint, auto: :compress }) %>"
-							width="50" height="50" class="uk-border-circle" alt="<%= team_member.name %>">
+							<img src="<%= team_member.photo.url({ w: 100, h: 100, fit: :crop, crop: :focalpoint, auto: :compress }) %>" width="50" height="50" class="uk-border-circle" alt="<%= team_member.name %>">
 						<% if team_member.website %></a><% else %></span><% end %>
 					<% end %>
 				</div>
@@ -304,10 +303,10 @@
 						<span><%= dato.property_info.phone %></span></a></p>
 
 					<p>
-						<a href="http://instagram.com/natapoclodge" target="_blank" class="uk-margin-small-right"><i class="uk-icon-instagram uk-icon-large uk-text-middle"></i></a>
-						<a href="http://facebook.com/natapoc" target="_blank" class="uk-margin-small-right"><i class="uk-icon-facebook-square uk-icon-large uk-text-middle"></i></a>
-						<a href="https://www.youtube.com/channel/UCh8Tm2PYc8e9e4xPg-CXcpQ" target="_blank" class="uk-margin-small-right"><i class="uk-icon-youtube-square uk-icon-large uk-text-middle"></i></a>
-						<a href="https://www.tripadvisor.com/Hotel_Review-g58560-d2015550-Reviews-Natapoc_Lodge-Leavenworth_Washington.html" target="_blank" class="uk-margin-small-right"><i class="uk-icon-tripadvisor uk-icon-large uk-text-middle"></i></a>
+						<a href="<%= dato.property_info.instagram_url %>" target="_blank" class="uk-margin-small-right"><i class="uk-icon-instagram uk-icon-large uk-text-middle"></i></a>
+						<a href="<%= dato.site.global_seo.facebook_page_url %>" target="_blank" class="uk-margin-small-right"><i class="uk-icon-facebook-square uk-icon-large uk-text-middle"></i></a>
+						<a href="<%= dato.property_info.youtube_url %>" target="_blank" class="uk-margin-small-right"><i class="uk-icon-youtube-square uk-icon-large uk-text-middle"></i></a>
+						<a href="<%= dato.property_info.tripadvisor_url %>" target="_blank" class="uk-margin-small-right"><i class="uk-icon-tripadvisor uk-icon-large uk-text-middle"></i></a>
 					</p>
 				</div>
 				<div class="uk-width-1-1 uk-width-large-1-2 uk-margin-large-bottom">
