@@ -1,6 +1,9 @@
 h1, .nl-heading {
 	text-transform: uppercase;
 }
+.nl-heading span {
+	text-transform: lowercase;
+}
 .nl-heading {
 	position: relative;
 	padding-bottom: 15px;
