@@ -16,7 +16,8 @@
 .nl-menu-bar__logo {
   display: block;
   height: 25px;
-  background: url("http://www.natapoclodge.com/wp/wp-content/themes/lodge-showcase/images/logo-new.png") no-repeat 0 100%;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
   background-size: 105px 50px;
   text-indent: -5000px;
 }
