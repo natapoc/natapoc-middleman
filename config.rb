@@ -34,8 +34,8 @@ page '/*.txt', layout: false
 # https://middlemanapp.com/advanced/dynamic-pages/
 
 dato.tap do |dato|
-  dato.galleries do |gallery|
-    puts gallery.inspect
+  dato.redirects.each do |redirect|
+    redirect "#{ redirect.origin }index.html", to: "#{ redirect.destination }"
   end
 end
 
