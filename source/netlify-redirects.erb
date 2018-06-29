@@ -1,0 +1,5 @@
+https://natapoc-staging.netlify.com/*       https://staging.natapoclodge.com/:splat 301!
+
+<% dato.redirects.each do |redirect| %>
+/<%= redirect.origin %> <%= redirect.destination %> 301
+<% end %>
