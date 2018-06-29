@@ -34,9 +34,6 @@ page '/*.txt', layout: false
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
-# Proxy pages
-# https://middlemanapp.com/advanced/dynamic-pages/
-
 # Fetch Airbnb data
 dato_client = Dato::Site::Client.new(ENV['DATO_FULL_ACCESS_API_TOKEN'])
 REVIEW_API_KEY = "review"
@@ -75,27 +72,8 @@ response[:reviews].each do |review|
   end
 end
 
-# @doc = Nokogiri::XML(open("https://tickets.thefair.com/upcomingEventPerformanceXML.asp"))
-# @doc.css("Event").each do |event|
-#   event.css("Performance").each do |performance|
-#     code = performance.css("PerformanceCode").text
-#     name = performance.css("PerformanceName").text
-#     unless @existing_showare_performance_codes.include?(code)
-#       puts "Saving #{ code }"
-#       dato_client.items.create(
-#         item_type: @showare_performance_type["id"],
-#         name: "#{ name } (#{ code })",
-#         code: code
-#       )
-#     end
-#   end
-# end
-
-# dato.tap do |dato|
-#   dato.redirects.each do |redirect|
-#     redirect "#{ redirect.origin }index.html", to: "#{ redirect.destination }"
-#   end
-# end
+# Proxy pages
+# https://middlemanapp.com/advanced/dynamic-pages/
 
 proxy "_redirects", "netlify-redirects", ignore: true
 
