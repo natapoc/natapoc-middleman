@@ -134,7 +134,7 @@ GEM
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
-    rack (2.0.5)
+    rack (2.0.7)
     rack-livereload (0.3.17)
       rack
     rb-fsevent (0.10.3)
@@ -169,6 +169,7 @@ DEPENDENCIES
   middleman-autoprefixer (~> 2.7)
   middleman-dato
   middleman-livereload
+  rack (>= 2.0.6)
   tzinfo-data
   wdm (~> 0.1)
 

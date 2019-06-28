@@ -132,7 +132,9 @@
 				<ul class="uk-grid uk-slideset">
           <% dato.instagram_posts.each do |instagram_post| %>
 						<li class="uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-3">
-							<%= instagram_post.share_code %>
+							<div>
+								<%= instagram_post.share_code %>
+							</div>
 						</li>
 					<% end %>
 				</ul>
