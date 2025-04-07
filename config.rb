@@ -61,7 +61,7 @@ response[:reviews].each do |review|
       dato_client.items.create(
         item_type: review_type["id"],
         guest_name: review[:author][:first_name],
-        photo: dato_client.upload_image(photo_url),
+        photo: nil,
         message: review[:comments],
         timestamp: review[:created_at]
       )
